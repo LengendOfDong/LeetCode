@@ -1,7 +1,7 @@
 # LeetCode
 
 来源：力扣（LeetCode）
-链接：https://leetcode-cn.com/problems/add-two-numbers
+链接：https://leetcode-cn.com/problems/
 
 ## 题目1：两数之和
 给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
