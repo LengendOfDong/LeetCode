@@ -1,4 +1,4 @@
-package leetcode.problem7;
+package leetcode.整数反转_7;
 
 /**
  * 整数反转

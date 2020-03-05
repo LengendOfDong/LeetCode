@@ -1,4 +1,4 @@
-package leetcode.problem1;
+package leetcode.两数之和_1;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,40 +1,47 @@
-package leetcode.problem3;
+package leetcode.无重复字符的最长字串_3;
 
 /**
  * @author dadongge
- * @date 2020/2/29
+ * @date 2020/2/27
  */
-public class Solution {
+public class Test {
     public int lengthOfLongestSubstring(String s) {
+        Integer maxLength = 0;
+        for(int i = 0; i < s.length() ; i++){
+            int max = getMax(s.substring(i));
+            if(max > maxLength){
+                maxLength = max;
+            }
+        }
+        return maxLength;
+    }
+
+    private int getMax(String s){
         char[] chars = s.toCharArray();
         String longestStr = "";
         int max = 0;
-        if(chars.length != 0) {
-            for (char ch : chars) {
-                if (longestStr.indexOf(ch) == -1) {
+        if(chars.length != 0){
+            for(char ch : chars){
+                if(longestStr.indexOf(ch) == -1){
                     longestStr = longestStr + ch;
-                } else {
+                }else{
                     if(max <= longestStr.length()){
                         max = longestStr.length();
                     }
-                    if(longestStr.indexOf(ch) != longestStr.length() - 1) {
-                        longestStr = longestStr.substring(longestStr.indexOf(ch) + 1) + ch;
-                    }else {
-                        longestStr = "" + ch;
-                    }
+                    longestStr = "" + ch;
                 }
             }
             if(max <= longestStr.length()){
                 max = longestStr.length();
             }
-            return max;
         }else{
             return 0;
         }
+        return max;
     }
 
     public static void main(String[] args){
-        Solution solution = new Solution();
+        Test solution = new Test();
         int a = solution.lengthOfLongestSubstring("abcabcbb");
         int b = solution.lengthOfLongestSubstring("bbbbb");
         int c = solution.lengthOfLongestSubstring("pwwkew");

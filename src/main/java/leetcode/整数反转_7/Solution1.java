@@ -1,6 +1,4 @@
-package leetcode.problem7;
-
-import java.util.Stack;
+package leetcode.整数反转_7;
 
 /**
  * @author dadongge
