@@ -24,12 +24,6 @@ public class Solution {
             if(s1.charAt(s1.length() - 1) == s2.charAt(0)){
                 if(s2.charAt(0) == s.charAt(i)){
                     middle = s1.charAt(s1.length() - 1) + String.valueOf(s.charAt(i)) + s2.charAt(0);
-                    if(s1.length() > 1 && s2.length() > 1) {
-                        s1 = s1.substring(0, s1.length() - 1);
-                        s2 = s2.substring(1);
-                    }else{
-                        longestReverseStr = middle;
-                    }
                 }else{
                     middle = String.valueOf(s.charAt(i));
                 }
@@ -51,18 +45,20 @@ public class Solution {
     }
 
     public String getStr(String s,String s1,String s2){
-        if(s1.charAt(s1.length() - 1) == s2.charAt(0)){
-            s = s1.charAt(s1.length() - 1) + s + s2.charAt(0);
-            if(s1.length() > 1 && s2.length() > 1) {
-                s1 = s1.substring(0, s1.length() - 1);
-                s2 = s2.substring(1);
-            }else{
-                return s;
-            }
-            return getStr(s,s1,s2);
+        if(s1.length() >1 && s2.length() > 1) {
+            s = s1.substring(0, s1.length() - 1) + s + s2.substring(1);
+            s1 = s1.substring(0, s1.length() - 1);
+            s2 = s2.substring(1);
+        }else if(s1.length() == 1 && s2.length() == 1) {
+            return s1 + s + s2;
+        }else if(s2.length()  == 1) {
+            return s + s2;
+        }else if(s1.length() == 1){
+            return s1 + s;
         }else{
             return s;
         }
+        return getStr(s,s1,s2);
     }
 
     public static void main(String[] args){
