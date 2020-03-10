@@ -22,7 +22,7 @@ public class Solution1 {
 
     public static void main(String[] args){
         int[] prices = new int[]{7,1,5,3,6,4};
-        Solution solution = new Solution();
+        Solution1 solution = new Solution1();
         System.out.println(solution.maxProfit(prices));
     }
 }
