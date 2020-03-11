@@ -13,29 +13,23 @@ public class Solution {
 
     private int getMax(TreeNode root, int val){
         if(root.right != null){
-            root = root.right;
-            int next = val + 1;
-            getRight(root, next);
+            getRight(root.right , val);
         }
         if(root.left != null){
-            root = root.left;
-            int next = val + 1;
-            getLeft(root,next);
+            getLeft(root.left ,val);
         }
         return val;
     }
 
     private int getLeft(TreeNode root , int val){
-
+        val++;
+        getMax(root,val);
         return val;
     }
 
     private int getRight(TreeNode root,int val){
-        if(root.right != null){
-            root = root.right;
-            val++;
-            getRight(root, val);
-        }
+        val++;
+        getMax(root,val);
         return val;
     }
 
