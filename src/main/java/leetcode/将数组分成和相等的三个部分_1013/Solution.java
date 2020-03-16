@@ -19,6 +19,9 @@ public class Solution{
                 if (sum == count && group < 2) {
                     group++;
                     sum = 0;
+                    if(i == A.length - 1){
+                        return  false;
+                    }
                 }
             }
             if (sum == totality / 3) {
