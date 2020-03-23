@@ -1,4 +1,4 @@
-package leetcode.最小的K个数;
+package leetcode.最小的K个数_面试题40;
 
 import java.util.Arrays;
 

@@ -1,6 +1,5 @@
-package leetcode.Z字型变换;
+package leetcode.Z字型变换_6;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
