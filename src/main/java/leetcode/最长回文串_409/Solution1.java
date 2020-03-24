@@ -1,4 +1,4 @@
-package 最长回文串_409;
+package leetcode.最长回文串_409;
 
 /**
  * @author dadongge
