@@ -64,16 +64,33 @@ public class Solution2 {
     public int movingCount(int m, int n, int k){
         int[] dx = new int[]{0,1};
         int[] dy = new int[]{1,0};
+        boolean[][] visited = new boolean[m][n];
 
         Queue<int[]> queue = new ArrayDeque<>();
-        for(int i= 0;i < m ; i++){
-            for(int j = 0;j < n;j++){
-                queue.offer(new int[]{i,j});
+        queue.offer(new int[]{0,0});
+        int[] point = null;
+        int ans = 1;
+        while(!queue.isEmpty()){
+            point = queue.poll();
+            int x = point[0];
+            int y = point[1];
+            for(int i=0;i < 2; i++){
+                int newX = x + dx[i];
+                int newY = y + dy[i];
+                if(newX < 0 || newX >= m || newY < 0 || newY >= n || (get(newX) + get(newY)) > k || visited[newX][newY]){
+                    continue;
+                }
+                queue.offer(new int[]{newX, newY});
+                visited[newX][newY] = true;
+                ans++;
             }
         }
+        return ans;
+    }
 
-        while(!queue.isEmpty()){
-
-        }
+    public static void main(String[] args){
+        Solution2 solution = new Solution2();
+        int i = solution.movingCount(16, 8, 4);
+        System.out.println(i);
     }
 }
