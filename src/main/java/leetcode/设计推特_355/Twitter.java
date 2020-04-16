@@ -5,4 +5,5 @@ package leetcode.设计推特_355;
  * @date 2020/4/13
  */
 public class Twitter {
+
 }
